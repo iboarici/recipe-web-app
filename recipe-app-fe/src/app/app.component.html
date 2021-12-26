@@ -1,0 +1,33 @@
+<nz-layout>
+  <nz-header *ngIf="authService.isLoggedin.value">
+    <div class="logo">
+      Recipe-app
+      <button nz-button nzType="default" nzShape="circle" routerLink="/recipe-list">
+        <i nz-icon nzType="home"></i>
+      </button>    
+      <button nz-button nzType="default" nzShape="circle" routerLink="/search">
+        <i nz-icon nzType="search"></i>
+      </button>
+    </div>
+
+    <div class="user-actions">
+      <button nz-button nzType="default" nzShape="circle" routerLink="/add-recipe" *ngIf="authService.isAdmin.value">
+        <i nz-icon nzType="plus"></i>
+      </button>
+      <button nz-button nzType="default" nzShape="circle" routerLink="/user-managment" *ngIf="authService.isAdmin.value">
+        <i nz-icon nzType="user"></i>
+      </button>
+      <button nz-button nzType="default" nzShape="circle" routerLink="/favorite-recipes">
+        <i nz-icon nzType="heart"></i>
+      </button>
+      <button nz-button nzType="default" nzShape="circle" (click)="authService.logout()">
+        <i nz-icon nzType="logout"></i>
+      </button>
+    </div>
+  </nz-header>
+  <nz-content>
+    <div class="inner-content">
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+</nz-layout>

@@ -1,0 +1,15 @@
+<div class="recipe-favorites">
+    <h2 nz-typography>Favorites List</h2>
+    <ul nz-list [nzDataSource]="favoritesList" nzBordered nzSize="large">
+        <li nz-list-item *ngFor="let item of favoritesList" nzNoFlex>
+            <ul nz-list-item-actions>
+                <nz-list-item-action>
+                    <a nz-button nzType="link" nzDanger (click)="deleteFavorite(item.id)">
+                        <i nz-icon nzType="delete"></i>
+                    </a>
+                </nz-list-item-action>
+            </ul>
+            <a nzType="link" routerLink="/recipe-detail/{{item.id}}">{{ item.title }}</a>
+        </li>
+    </ul>
+</div>

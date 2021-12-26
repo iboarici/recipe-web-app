@@ -1,0 +1,38 @@
+<div class="recipe-list">
+    <h2 nz-typography>Recipe List</h2>
+    <nz-table #basicTable [nzData]="recipeList" [nzTotal]="recipeList ? recipeList.length : null " [nzPageSize]="5">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Calories</th>
+                <th>Preparing Time (min)</th>
+                <th>Serving</th>
+                <th>Vegetarian</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of basicTable.data">
+                <td>{{ data.title }}</td>
+                <td>{{ data.calories }}</td>
+                <td>{{ data.prepareTimeInMinutes }}</td>
+                <td>{{ data.suitableForNumberOfPeople }}</td>
+                <td>{{ data.vegetarian ? 'Yes': 'No' }}</td>
+                <td>
+                    <a routerLink="/recipe-detail/{{data.id}}">Detail</a>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <a nz-button nzType="link" routerLink="/add-recipe/{{data.id}}" *ngIf="authService.isAdmin.value">
+                        <i nz-icon nzType="edit"></i>
+                    </a>
+                    <a nz-button nzType="link" class="{{data.existInFavorites ? 'is-active' : null}}"
+                        (click)="doFavoritesAction(data)">
+                        <i nz-icon nzType="heart" [nzTheme]=" data.existInFavorites ? 'fill' : null"></i>
+                    </a>
+                    <a nz-button nzType="link" nzDanger (click)="removeRecipe(data)" *ngIf="authService.isAdmin.value">
+                        <i nz-icon nzType="delete"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

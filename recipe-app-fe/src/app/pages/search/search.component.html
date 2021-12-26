@@ -1,0 +1,63 @@
+<div class="search">
+    <h2 nz-typography>Search</h2>
+
+    <form nz-form [formGroup]="form" nzLayout="inline" (ngSubmit)="submitForm()">
+        <nz-form-item>
+            <nz-form-control nzErrorTip="suitable People">
+                <input formControlName="people" nz-input placeholder="suitable People" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control nzErrorTip="title">
+                <input formControlName="title" nz-input placeholder="title" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-range-picker formControlName="date" [nzShowTime]="{ nzFormat: 'HH:mm' }" nzFormat="dd-MM-yyyy HH:mm">
+            </nz-range-picker>
+        </nz-form-item>
+        <nz-form-item>
+            <label nz-checkbox formControlName="vegetarian">
+                <span>vegetarian</span>
+            </label>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="!form.valid">Search</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+    <nz-divider></nz-divider>
+
+
+    <div *ngIf="!!recipeList.length">
+        <h2 nz-typography>Result</h2>
+        <nz-table #basicTable [nzData]="recipeList" [nzTotal]="recipeList ? recipeList.length : null " [nzPageSize]="5">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Calories</th>
+                    <th>Preparing Time (min)</th>
+                    <th>Serving</th>
+                    <th>Vegetarian</th>
+                    <th>date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of basicTable.data">
+                    <td>{{ data.title }}</td>
+                    <td>{{ data.calories }}</td>
+                    <td>{{ data.prepareTimeInMinutes }}</td>
+                    <td>{{ data.suitableForNumberOfPeople }}</td>
+                    <td>{{ data.vegetarian ? 'Yes': 'No' }}</td>
+                    <td>{{ data.creationDate}}</td>
+                    <td>
+                        <a routerLink="/recipe-detail/{{data.id}}">Detail</a>
+                    </td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </div>
+
+</div>

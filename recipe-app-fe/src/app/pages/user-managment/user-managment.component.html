@@ -1,0 +1,58 @@
+<div class="user-managment">
+    <h2 nz-typography>User Managment</h2>
+
+    <nz-tabset>
+        <nz-tab nzTitle="Add User">
+            <form nz-form name="create-user" autocomplete="none" [nzLayout]="'inline'" [formGroup]="validateForm"
+                (ngSubmit)="submitForm()">
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your username!">
+                        <nz-input-group nzPrefixIcon="user">
+                            <input formControlName="username" nz-input placeholder="Username" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Password!">
+                        <nz-input-group nzPrefixIcon="lock">
+                            <input formControlName="password" nz-input type="password" placeholder="Password" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <label nz-checkbox formControlName="isAdmin">
+                        <span>is admin user</span>
+                    </label>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control>
+                        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Save</button>
+                    </nz-form-control>
+                </nz-form-item>
+            </form>
+        </nz-tab>
+        <nz-tab nzTitle="List User">
+            <ul nz-list [nzDataSource]="userList" nzBordered nzSize="large">
+                <li nz-list-item *ngFor="let item of userList" nzNoFlex class="user-list-item">
+                    <ul nz-list-item-actions>
+                        <nz-list-item-action>
+                            <a nz-button nzType="link" nzDanger (click)="deleteUser(item)">
+                                <i nz-icon nzType="delete"></i>
+                            </a>
+                        </nz-list-item-action>
+                    </ul>
+                    <div class="user">
+                        <span>
+                            user name : {{item.username}}
+                        </span>
+                        <nz-divider></nz-divider>
+                        <span>
+                            user role: <nz-badge nzStatus="processing" nzText="{{item.role}}"></nz-badge>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+
+        </nz-tab>
+    </nz-tabset>
+</div>

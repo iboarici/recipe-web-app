@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "61efcac7-242b-4fcc-b5c8-607b63fa948c",
+		"name": "Recipe Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Add New User",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"iboarici\",\n    \"password\" : \"ibo123\",\n    \"role\": \"USER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/user/iboarici2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"user",
+								"iboarici2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search API",
+			"item": [
+				{
+					"name": "Search Recipe By ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Recipe By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9091/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9091",
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=ISO-8859-1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Dec 2021 17:10:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Homepage"
+						}
+					]
+				},
+				{
+					"name": "Search Recipe By Criteria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"suitableForNumberOfPeopleEQUAL\": 2,\n    \"vegetarian\": false,\n    \"createDateSTART\": \"22-04-2012 12:45\",\n    \"createDateEND\": \"22-04-2022 12:45\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/search/recipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"search",
+								"recipe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Ingredients By Recipe Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/search/ingredients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"search",
+								"ingredients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Cooking Instructions By Recipe Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/search/instructions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"search",
+								"instructions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipe API",
+			"item": [
+				{
+					"name": "Add Recipe",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"fake food 24\",\n  \"creationDate\": \"22-05-2020 12:45\",\n  \"vegetarian\": true,\n  \"suitableForNumberOfPeople\": 4,\n  \"prepareTimeInMinutes\": 90,\n  \"cookingTimeInMinutes\": 98,\n  \"calories\": 2000,\n  \"videoUrl\": \"fake_data\",\n  \"imageUrl\": \"fake_data\",\n  \"createdUser\": \"fake_data\",\n  \"category\": \"Lunch\",\n  \"ingredients\": [\n    {\n      \"quantity\": 68.53,\n      \"unit\": \"fake_data\",\n      \"name\": \"fake_data\",\n      \"size\": \"fake_data\",\n      \"additionalInfo\": \"fake_data\"\n    }\n  ],\n  \"cookingInstructions\": [\n    {\n      \"orderId\": 1,\n      \"description\": \"fake_data\",\n      \"imageUrl\": \"fake_data\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/recipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"recipe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Recipe",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"fake food 23\",\n  \"creationDate\": \"22-05-2020 12:45\",\n  \"vegetarian\": true,\n  \"suitableForNumberOfPeople\": 4,\n  \"prepareTimeInMinutes\": 90,\n  \"cookingTimeInMinutes\": 98,\n  \"calories\": 2000,\n  \"videoUrl\": \"fake_data\",\n  \"imageUrl\": \"fake_data\",\n  \"createdUser\": \"fake_data\",\n  \"category\": \"Lunch\",\n  \"ingredients\": [\n    {\n      \"quantity\": 68.53,\n      \"unit\": \"fake_data\",\n      \"name\": \"fake_data\",\n      \"size\": \"fake_data\",\n      \"additionalInfo\": \"fake_data\"\n    }\n  ],\n  \"cookingInstructions\": [\n    {\n      \"orderId\": 1,\n      \"description\": \"fake_data\",\n      \"imageUrl\": \"fake_data\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/recipe/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"recipe",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Recipe By Id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/recipe/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"recipe",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Recipes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/recipe/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"recipe",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favorite Recipes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/recipe/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"recipe",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Recipe",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/recipe/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"recipe",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Recipe to Favorites",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"fake food 2\",\n  \"creationDate\": \"19-05-2016 12:45\",\n  \"vegetarian\": true,\n  \"suitableForNumberOfPeople\": 4,\n  \"prepareTimeInMinutes\": 90,\n  \"cookingTimeInMinutes\": 98,\n  \"calories\": 2000,\n  \"videoUrl\": \"fake_data\",\n  \"imageUrl\": \"fake_data\",\n  \"createdUser\": \"fake_data\",\n  \"categories\": [\n    \"Lunch\"\n  ],\n  \"ingredients\": [\n    {\n      \"quantity\": 68.53,\n      \"unit\": \"fake_data\",\n      \"name\": \"fake_data\",\n      \"size\": \"fake_data\",\n      \"additionalInfo\": \"fake_data\"\n    }\n  ],\n  \"cookingInstructions\": [\n    {\n      \"orderId\": 1,\n      \"description\": \"fake_data\",\n      \"imageUrl\": \"fake_data\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/recipe/favorites/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"recipe",
+								"favorites",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Recipe from Favorites",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"fake food 2\",\n  \"creationDate\": \"19-05-2016 12:45\",\n  \"vegetarian\": true,\n  \"suitableForNumberOfPeople\": 4,\n  \"prepareTimeInMinutes\": 90,\n  \"cookingTimeInMinutes\": 98,\n  \"calories\": 2000,\n  \"videoUrl\": \"fake_data\",\n  \"imageUrl\": \"fake_data\",\n  \"createdUser\": \"fake_data\",\n  \"categories\": [\n    \"Lunch\"\n  ],\n  \"ingredients\": [\n    {\n      \"quantity\": 68.53,\n      \"unit\": \"fake_data\",\n      \"name\": \"fake_data\",\n      \"size\": \"fake_data\",\n      \"additionalInfo\": \"fake_data\"\n    }\n  ],\n  \"cookingInstructions\": [\n    {\n      \"orderId\": 1,\n      \"description\": \"fake_data\",\n      \"imageUrl\": \"fake_data\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/recipe/favorites/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"recipe",
+								"favorites",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

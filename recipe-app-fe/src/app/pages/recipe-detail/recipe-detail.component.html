@@ -1,0 +1,45 @@
+<div class="recipe-detail">
+    <h2 nz-typography>Recipe Detail</h2>
+    <nz-descriptions nzBordered>
+        <nz-descriptions-item nzTitle="Name">{{aciteRecipe?.title}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Calories">{{aciteRecipe?.calories}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Category">{{aciteRecipe?.category}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Cooking Time"> {{aciteRecipe?.cookingTimeInMinutes}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Creation Date" [nzSpan]="2">
+            {{aciteRecipe?.creationDate}}
+        </nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Vegetarian" [nzSpan]="3">
+            <nz-badge nzStatus="processing" nzText="{{aciteRecipe?.vegetarian ? 'Yes': 'No'}}"></nz-badge>
+        </nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Preparing Time"> {{aciteRecipe?.prepareTimeInMinutes}}(min)
+        </nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Serving People">{{aciteRecipe?.suitableForNumberOfPeople}}
+        </nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Video Url">
+            {{aciteRecipe?.videoUrl ? aciteRecipe?.videoUrl : '-'}}
+        </nz-descriptions-item>
+    </nz-descriptions>
+    <nz-divider></nz-divider>
+    <nz-tabset>
+        <nz-tab nzTitle="Ingredients">
+           
+            <nz-list nzBordered>
+                <nz-list-item *ngFor="let item of aciteRecipe?.ingredients">
+                    <span nz-typography><mark></mark></span>
+                    {{ item.quantity }} {{ item.unit }} {{ item.name }} <span *ngIf="item.size"> ({{ item.size }})
+                    </span> <span *ngIf="item.additionalInfo"> &nbsp;/ {{item.additionalInfo}}</span>
+                </nz-list-item>
+            </nz-list>
+
+        </nz-tab>
+        <nz-tab nzTitle="Cooking Instructions">
+
+            <nz-timeline>
+                <nz-timeline-item *ngFor="let item of aciteRecipe?.cookingInstructions">
+                    {{item.description}}
+                </nz-timeline-item>
+            </nz-timeline>
+
+        </nz-tab>
+    </nz-tabset>
+</div>

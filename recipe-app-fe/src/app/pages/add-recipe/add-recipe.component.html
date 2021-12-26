@@ -1,0 +1,17 @@
+<div class="add-recipe">
+    <h2 nz-typography>{{activeRecipeID ? 'Update': 'Add'}} Recipe</h2>
+    <form nz-form [formGroup]="form" nzLayout="vertical" (ngSubmit)="submitForm()">
+        <nz-form-item>
+            <nz-form-control>
+                <nz-textarea-count>
+                    <textarea rows="10" formControlName="obj" nz-input></textarea>
+                </nz-textarea-count>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="!form.valid">Submit</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</div>
