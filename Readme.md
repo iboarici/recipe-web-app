@@ -30,10 +30,10 @@ http://localhost:4200
 http://localhost:9091/swagger-ui.html#/
 
 
-#POSTMAN Collections
+## POSTMAN Collections
 Open the src/main/resources/Recipe Application.postman_collection.json
 
-#Database Model
+## Database Model
 ![Alt text](./recipe-application/src/main/resources/database%20model/recipe.png)
 
 
